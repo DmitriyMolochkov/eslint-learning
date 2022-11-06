@@ -7,14 +7,9 @@
     "start": "node src/index.js",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo \"[Husky] pre-commit\""
-    }
-  },
   "lint-staged": {
     "*.js": [
-      "eslint --fix"
+      "eslint"
     ]
   },
   "engines": {
