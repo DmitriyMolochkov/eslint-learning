@@ -3,9 +3,13 @@
         "es6": true,
         "node": true
     },
-    "extends": ["eslint:recommended", "airbnb-base"],
+    "extends": [
+        "eslint:recommended",
+        "airbnb-base",
+        "plugin:node/recommended"
+    ],
     "parserOptions": {
-        "ecmaVersion": 2018
+        "ecmaVersion": 2019
     },
     "rules": {
         "indent": [

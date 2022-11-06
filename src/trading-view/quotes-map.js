@@ -1,14 +1,12 @@
 const EventEmitter = require('events');
 const { generateRandomString } = require('./utils');
 
-class QuoteEmitter extends EventEmitter {}
-
 class QuotesMap extends Map {
   constructor(connection, ...args) {
     super(...args);
     this.connection = connection;
     this.startSession();
-    this.quoteEmitter = new QuoteEmitter();
+    this.quoteEmitter = new EventEmitter();
   }
 
   startSession() {
