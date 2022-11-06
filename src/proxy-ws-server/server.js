@@ -9,6 +9,8 @@ const { AddSymbolMessage, DeleteSymbolMessage } = messages;
 
 const clientsBySymbolsMap = new Map();
 
+console.log();
+
 function parseMessage(message) {
   const messageObj = JSON.parse(message);
   const MessageClass = messageMap.get(messageObj.type);
