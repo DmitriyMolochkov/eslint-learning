@@ -1,12 +1,15 @@
+// eslint-disable-next-line max-classes-per-file
 const EventEmitter = require('events');
 const { generateRandomString } = require('./utils');
+
+class QuoteEmitter extends EventEmitter {}
 
 class QuotesMap extends Map {
   constructor(connection, ...args) {
     super(...args);
     this.connection = connection;
     this.startSession();
-    this.quoteEmitter = new EventEmitter();
+    this.quoteEmitter = new QuoteEmitter();
   }
 
   startSession() {
