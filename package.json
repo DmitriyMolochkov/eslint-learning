@@ -13,7 +13,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.js": [
       "npx eslint ./src --fix",
       "git add"
     ]
