@@ -3,7 +3,7 @@ class BaseMessage {
     return new this(JSON.parse(str));
   }
 
-  constructor (data) {
+  constructor(data) {
     if (this.constructor.name === 'BaseMessage') {
       throw new Error(`${this.constructor.name}: can not create instance of abstract class`);
     }
@@ -19,7 +19,7 @@ class BaseMessage {
     }
   }
 
-  toJSON () {
+  toJSON() {
     return {
       type: this.type,
       symbol: this.symbol,
@@ -28,4 +28,4 @@ class BaseMessage {
 }
 
 BaseMessage.MESSAGE_TYPE = 'message';
-module.exports = BaseMessage
+module.exports = BaseMessage;

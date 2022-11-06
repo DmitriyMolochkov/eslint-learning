@@ -1,7 +1,6 @@
 const BaseMessage = require('./base');
 
 class DeleteSymbolMessage extends BaseMessage {
-
   constructor(data = {}) {
     super(data);
   }

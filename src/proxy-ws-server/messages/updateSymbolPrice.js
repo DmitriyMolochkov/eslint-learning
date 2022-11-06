@@ -1,11 +1,10 @@
 const BaseMessage = require('./base');
 
 class UpdateSymbolPriceMessage extends BaseMessage {
-
+  // eslint-disable-next-line default-param-last
   constructor(data = {}, price) {
     super(data);
-    if (price == null)
-      throw new Error(`Can not create instance of ${this.constructor.name}: price field is required`);
+    if (price == null) { throw new Error(`Can not create instance of ${this.constructor.name}: price field is required`); }
 
     this.price = price;
   }
@@ -13,7 +12,7 @@ class UpdateSymbolPriceMessage extends BaseMessage {
   toJSON() {
     return {
       ...super.toJSON(),
-      price: this.price
+      price: this.price,
     };
   }
 }

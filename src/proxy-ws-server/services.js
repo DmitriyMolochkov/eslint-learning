@@ -1,7 +1,7 @@
-const { WebSocket } = require("ws")
+const { WebSocket } = require('ws');
 const { UpdateSymbolPriceMessage } = require('./messages');
 
-function addSymbol(ws, symbol , clientsBySymbolsMap, quotesMap) {
+function addSymbol(ws, symbol, clientsBySymbolsMap, quotesMap) {
   if (clientsBySymbolsMap.has(symbol)) {
     clientsBySymbolsMap.get(symbol).add(ws);
 
@@ -26,18 +26,18 @@ function deleteSymbol(ws, symbol, clientsBySymbolsMap, quotesMap) {
 }
 
 function updatePrice(quote, clientsBySymbolsMap) {
-  const symbol = quote.symbol;
+  const { symbol } = quote;
   const clients = clientsBySymbolsMap.get(symbol);
   if (!clients) return;
-  clients.forEach(client => {
+  clients.forEach((client) => {
     if (client.readyState === WebSocket.OPEN) {
       client.send(JSON.stringify(new UpdateSymbolPriceMessage({ symbol }, quote.price)));
     }
-  })
+  });
 }
 
 module.exports = {
   addSymbol,
   deleteSymbol,
   updatePrice,
-}
+};

@@ -1,7 +1,6 @@
 const BaseMessage = require('./base');
 
 class AddSymbolMessage extends BaseMessage {
-
   constructor(data = {}) {
     super(data);
   }
