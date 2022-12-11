@@ -1,5 +1,3 @@
 module.exports = {
-  '*.js': [
-    'eslint --fix --max-warnings=0',
-  ],
+  '*.js': (filenames) => ['eslint --fix --max-warnings=0'].map((command) => `${command} '${filenames.join(' ')}'`),
 };
