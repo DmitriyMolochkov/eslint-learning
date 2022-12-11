@@ -1,3 +1,10 @@
 module.exports = {
-  '*.js': (filenames) => ['eslint --fix --max-warnings=0'].map((command) => `${command} ${filenames.join(' ')}`),
+  '*.js': (filenames) => {
+    const commands = [
+      'eslint --fix --max-warnings=0 --no-inline-config',
+    ];
+    const filesToCheck = filenames.join(' ');
+
+    return commands.map((command) => `${command} ${filesToCheck}`);
+  },
 };
