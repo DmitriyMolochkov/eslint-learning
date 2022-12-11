@@ -24,7 +24,8 @@
             "error",
             "always"
         ],
-        "global-require": "off"
+        "global-require": "off",
+        "linebreak-style": "off"
         //"no-console": "off"
     }
 }

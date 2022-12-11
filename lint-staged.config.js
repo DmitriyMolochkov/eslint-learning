@@ -1,5 +1,5 @@
 module.exports = {
-  '*.jsx': [
+  '*.js': [
     'eslint --fix --max-warnings=0',
   ],
 };
