@@ -3,8 +3,8 @@ module.exports = {
     const commands = [
       'eslint --fix --max-warnings=0 --no-inline-config',
     ];
-    const filesToCheck = filenames.join(' ');
+    const filesToLint = filenames.join(' ');
 
-    return commands.map((command) => `${command} ${filesToCheck}`);
+    return commands.map((command) => `${command} ${filesToLint}`);
   },
 };
