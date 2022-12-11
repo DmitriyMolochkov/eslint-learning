@@ -1,8 +1,6 @@
 const { connect } = require('./trading-view');
 const { start: startProxyServer } = require('./proxy-ws-server');
 
-console.log();
-
 module.exports = async () => {
   let connection;
   let qwe;
