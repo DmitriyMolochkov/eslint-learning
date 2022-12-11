@@ -5,9 +5,11 @@ const { start: startProxyServer } = require('./proxy-ws-server');
 
 module.exports = async () => {
   let connection;
+  let qwe;
   let wss;
   try {
-    connection = await connect();
+    qwe = 1;
+    connection = await connect(qwe);
     wss = await startProxyServer(connection);
   } catch (e) {
     // console.error(e.toString());
